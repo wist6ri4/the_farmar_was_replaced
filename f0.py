@@ -32,6 +32,7 @@ for i in range(get_world_size()):
 		elif i < rows_for_carrot + rows_for_bush + rows_for_pumpkin:
 			till()
 			plant(Entities.Pumpkin)
+		use_item(Items.Water)
 		move(North)
 	move(East)
 
@@ -41,6 +42,8 @@ while True:
 			if can_harvest():
 				harvest()
 				plant(Entities.Carrot)
+			if get_water() < 0.5:
+				use_item(Items.Water)
 			if(get_pos_y() + 1 != get_world_size()):
 				move(North)
 			else:
@@ -55,6 +58,8 @@ while True:
 					plant(Entities.Bush)
 				else:
 					plant(Entities.Tree)
+			if get_water() < 0.5:
+				use_item(Items.Water)
 			if(get_pos_y() + 1 != get_world_size()):
 				move(North)
 			else:
@@ -66,6 +71,8 @@ while True:
 			if can_harvest():
 				harvest()
 			plant(Entities.Pumpkin)
+			if get_water() < 0.5:
+				use_item(Items.Water)
 			if(get_pos_y() + 1 != get_world_size()):
 				move(North)
 			else:
@@ -77,6 +84,8 @@ while True:
 			if can_harvest():
 				harvest()
 				plant(Entities.Grass)
+			if get_water() < 0.5:
+				use_item(Items.Water)
 			if(get_pos_y() + 1 != get_world_size()):
 				move(North)
 			else:
